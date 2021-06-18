@@ -38,9 +38,15 @@ int main() {
 
 
 	float vertices[] = {
-		-0.5f, -0.5f, 0.0f, // left
-		0.5f, -0.5f, 0.0f, // right
-		0.0f, 0.5f, 0.0f  // top
+		// first triangle
+		-0.9f, -0.5f, 0.0f,  // left 
+		-0.0f, -0.5f, 0.0f,  // right
+		-0.45f, 0.5f, 0.0f,  // top 
+
+		// second triangle
+		0.1f, -0.5f, 0.0f, // left
+		1.0f, -0.5f, 0.0f, // right
+		0.5f, 0.5f, 0.0f  // top
 	};
 
 	unsigned int VBO, VAO;
@@ -86,7 +92,7 @@ int main() {
 
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
